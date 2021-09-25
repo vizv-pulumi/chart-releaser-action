@@ -244,7 +244,7 @@ package_chart() {
 }
 
 release_charts() {
-    local args=(-o "$owner" -r "$repo" -c "$(git rev-parse HEAD)")
+    local args=(-o "$owner" -r "$repo" -c "$(git rev-parse HEAD)" --skip-existing)
     if [[ -n "$config" ]]; then
         args+=(--config "$config")
     fi
